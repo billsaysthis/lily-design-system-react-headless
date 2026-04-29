@@ -1,6 +1,6 @@
-// GanttTableData component
+// GanttTableTd component
 //
-// A single cell within a GanttTableRow representing a time period in the
+// A single cell within a GanttTableTr representing a time period in the
 // Gantt table grid. Renders as a <td> with role="gridcell". Supports an
 // active state to indicate the task spans this time period, communicated
 // via aria-selected for screen readers.
@@ -12,18 +12,18 @@
 //   ...restProps — additional HTML attributes spread onto the <td>.
 //
 // Syntax:
-//   <GanttTableData active>---</GanttTableData>
-//   <GanttTableData />
+//   <GanttTableTd active>---</GanttTableTd>
+//   <GanttTableTd />
 //
 // Examples:
 //   
-//   <GanttTableData active>---</GanttTableData>
+//   <GanttTableTd active>---</GanttTableTd>
 //
 //   
-//   <GanttTableData />
+//   <GanttTableTd />
 //
 //   
-//   <GanttTableData active>◆</GanttTableData>
+//   <GanttTableTd active>◆</GanttTableTd>
 //
 // Keyboard:
 //   None built-in — keyboard navigation is handled at the GanttTable grid level.
@@ -38,7 +38,7 @@
 //
 // Claude rules:
 //   - Headless: no CSS, no styles — consumer provides all styling
-//   - Must be used inside a GanttTableRow (which provides the <tr>)
+//   - Must be used inside a GanttTableTr (which provides the <tr>)
 //   - Children are optional — empty cells represent inactive time periods
 //
 // References:
@@ -55,7 +55,7 @@ export interface GanttTableDataProps {
     [key: string]: unknown;
 }
 
-export default function GanttTableData({
+export default function GanttTableTd({
     className = "",
     active = false,
     children,
@@ -63,7 +63,7 @@ export default function GanttTableData({
 }: GanttTableDataProps) {
     return (
         <td
-        className={`gantt-table-data ${className}`}
+        className={`gantt-table-td ${className}`}
         role="gridcell"
         aria-selected={active || undefined}
         tabIndex={active ? 0 : -1}

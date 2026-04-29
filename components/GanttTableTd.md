@@ -1,6 +1,6 @@
-# GanttTableData
+# GanttTableTd
 
-A Gantt table data cell is a single cell within a GanttTableRow representing a time period in the Gantt table grid. It renders as a `<td>` with `role="gridcell"`. Supports an active state to indicate the task spans this time period, communicated via `aria-selected` for screen readers.
+A Gantt table data cell is a single cell within a GanttTableTr representing a time period in the Gantt table grid. It renders as a `<td>` with `role="gridcell"`. Supports an active state to indicate the task spans this time period, communicated via `aria-selected` for screen readers.
 
 ## Implementation Notes
 
@@ -8,7 +8,7 @@ A Gantt table data cell is a single cell within a GanttTableRow representing a t
 - Active state indicated via `aria-selected="true"` and `tabindex="0"`
 - Inactive cells have `tabindex="-1"` for roving tabindex pattern
 - Children are optional -- empty cells represent inactive time periods
-- Must be used inside a GanttTableRow
+- Must be used inside a GanttTableTr
 
 ## Props
 
@@ -20,13 +20,13 @@ A Gantt table data cell is a single cell within a GanttTableRow representing a t
 
 ```tsx
 {/* Active time period with bar content */}
-<GanttTableData active>---</GanttTableData>
+<GanttTableTd active>---</GanttTableTd>
 
 {/* Inactive empty time period */}
-<GanttTableData />
+<GanttTableTd />
 
 {/* Active with milestone marker */}
-<GanttTableData active>◆</GanttTableData>
+<GanttTableTd active>◆</GanttTableTd>
 ```
 
 ## ARIA

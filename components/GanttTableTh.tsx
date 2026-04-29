@@ -1,7 +1,7 @@
-// GanttTableCol component
+// GanttTableTh component
 //
 // A column header cell within a GanttTable, rendered as a <th> element.
-// Used inside a <GanttTableRow> within <GanttTableHead> to label the time
+// Used inside a <GanttTableTr> within <GanttTableThead> to label the time
 // period columns of the Gantt grid.
 //
 // Props:
@@ -34,7 +34,7 @@ export interface GanttTableColProps {
     [key: string]: unknown;
 }
 
-export default function GanttTableCol({
+export default function GanttTableTh({
     className = "",
     colSpan,
     rowSpan,
@@ -44,7 +44,7 @@ export default function GanttTableCol({
 }: GanttTableColProps) {
     return (
         <th
-        className={`gantt-table-col ${className}`}
+        className={`gantt-table-th ${className}`}
         scope={scope}
         colSpan={colSpan || undefined}
         rowSpan={rowSpan || undefined}
