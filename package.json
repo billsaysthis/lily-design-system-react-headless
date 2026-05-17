@@ -51,5 +51,8 @@
     "onlyBuiltDependencies": [
       "esbuild"
     ]
+  },
+  "dependencies": {
+    "lily-design-system-react-headless": "^0.2.0"
   }
 }
